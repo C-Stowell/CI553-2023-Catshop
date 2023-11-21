@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Main
+comment1.params=
+comment1.target=void\ update()
+comment2.params=args
+comment2.target=void\ main(java.lang.String[])
+comment3.params=window
+comment3.target=void\ start(javafx.stage.Stage)
+numComments=4
