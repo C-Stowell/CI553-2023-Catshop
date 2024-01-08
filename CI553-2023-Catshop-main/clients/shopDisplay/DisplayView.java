@@ -21,7 +21,7 @@ import java.util.Observer;
 public class DisplayView extends Canvas implements Observer
 {
   private static final long serialVersionUID = 1L;
-  private Font font = new Font("Monospaced",Font.BOLD,24);
+  private Font font = new Font("SansSerif",Font.BOLD,26);
   private int H = 300;         // Height of window 
   private int W = 400;         // Width  of window 
   private String textToDisplay = "";
@@ -74,7 +74,7 @@ public class DisplayView extends Canvas implements Observer
            "Orders in system" + "\n" +
            "Waiting        : " + listOfOrders( res, "Waiting" ) + 
            "\n"  + 
-           "Being picked   : " + listOfOrders( res, "BeingPicked" ) + 
+           "Being picked up  : " + listOfOrders( res, "BeingPicked" ) +
            "\n"  + 
            "To Be Collected: " + listOfOrders( res, "ToBeCollected" );
     }
@@ -135,13 +135,22 @@ public class DisplayView extends Canvas implements Observer
     g.fill( new Rectangle2D.Double( 0, 0, W, H ) );
 
     // Draw state of system on display
-    String lines[] = textToDisplay.split("\n");
-    g.setPaint( Color.white );
-    for ( int i=0; i<lines.length; i++ )
-    {
-      g.drawString( lines[i], 0, 50 + 50*i );
-    }
-    
+
+    String boxes[] = textToDisplay.split("\n");
+    g.setPaint(Color.white);
+     int lineHeight = 55;
+     int margin = 9;
+     for (int i = 0; i < boxes.length; i++) {
+       int rectX = margin;
+       int rectY = margin + i * lineHeight;
+       int rectWidth = W - 2 * margin;
+       int rectHeight = lineHeight + 15 - margin;
+
+       g.drawRect(rectX, rectY, rectWidth, rectHeight);
+
+       g.drawString(boxes[i], rectX + margin, rectY + lineHeight - margin);
+     }
+
   }
 
   /**
