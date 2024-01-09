@@ -13,11 +13,6 @@ public class BetterCashierModel extends CashierModel  {
     {
         return new BetterBasket();
     }
-    /**
-     * Construct the model of the Cashier
-     *
-     * @param mf The factory to create the connection objects
-     */
     public BetterCashierModel(MiddleFactory mf) {
         super(mf);
 

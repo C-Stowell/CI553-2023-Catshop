@@ -11,6 +11,7 @@ import java.util.Comparator;
  * @author  Cameron Stowell
  * @version 1.0
  */
+
 public class BetterBasket extends Basket implements Serializable, Comparator<Product>
 {
   private static final long serialVersionUID = 1L;
